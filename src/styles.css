@@ -1,4 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+button[mat-raised-button] {
+    background-color: #2b2b3d !important;
+    color: white !important;
+    border-radius: 8px !important;
+    transition: background-color 0.2s ease-in-out !important;
+}
+
+button[mat-raised-button]:hover {
+    background-color: #38384f !important;
+}

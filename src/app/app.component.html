@@ -1,8 +1,14 @@
 <mat-toolbar color="primary">
   <span>Gestor de Productos</span>
+
+  <span class="spacer"></span> <!-- Este espaciador empuja el botón hacia la derecha -->
+
+  <!-- Botón de Cerrar Sesión -->
+  <button mat-icon-button *ngIf="authService.isAuthenticated()" (click)="logout()" title="Cerrar Sesión">
+    <mat-icon>logout</mat-icon>
+  </button>
 </mat-toolbar>
 
-<!-- Aquí dentro es donde Angular inyectará el ProductListComponent o cualquier otra página según la ruta -->
 <main style="padding: 20px;">
   <router-outlet></router-outlet>
 </main>

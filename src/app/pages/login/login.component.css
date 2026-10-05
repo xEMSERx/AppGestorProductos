@@ -1,0 +1,55 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px 30px;
+    background-color: #2b2b3d;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    color: #1976d2;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.error-text {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+button[color="primary"] {
+    background-color: #1976d2 !important;
+    margin-top: 10px;
+    margin-bottom: 0 !important;
+}
+
+button[color="primary"]:hover {
+    background-color: #1565c0 !important;
+}
+
+::ng-deep input,
+::ng-deep mat-label {
+    color: white !important;
+}
+
+::ng-deep .mdc-text-field--outlined {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 4px;
+}

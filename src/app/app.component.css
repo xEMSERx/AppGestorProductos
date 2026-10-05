@@ -1,0 +1,9 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+mat-toolbar {
+    background-color: #1f1f2e !important;
+    color: white !important;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
