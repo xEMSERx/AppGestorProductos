@@ -1,3 +1,8 @@
+.drawer-container {
+    background: transparent;
+    min-height: calc(100vh - 120px);
+}
+
 .container {
     padding: 20px;
     max-width: 1000px;
@@ -16,14 +21,33 @@
     margin-bottom: 25px;
 }
 
-.header-controls button {
+.header-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.header-controls button[color="primary"] {
     background-color: #1976d2 !important;
     color: white !important;
     font-size: 14px;
 }
 
-.header-controls button:hover {
+.header-controls button[color="primary"]:hover {
     background-color: #1565c0 !important;
+}
+
+.cart-toggle-btn {
+    background-color: #ff9800 !important;
+    color: #1a1a27 !important;
+    font-weight: 600 !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cart-toggle-btn:hover {
+    background-color: #f57c00 !important;
 }
 
 .search-input ::ng-deep input,
@@ -70,4 +94,227 @@ button.mat-mdc-icon-button {
 
 button.mat-mdc-icon-button:hover {
     color: white !important;
+}
+
+.add-cart-btn {
+    color: #ffb74d !important;
+}
+
+.add-cart-btn:hover {
+    color: #ffa726 !important;
+}
+
+/* ESTILOS DEL DRAWER (PANEL LATERAL) */
+.cart-drawer {
+    width: 360px;
+    max-width: 90vw;
+    background-color: #232334 !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    /* Borde sutil */
+    box-shadow: -8px 0 25px rgba(0, 0, 0, 0.4) !important;
+    /* Sombra elegante que delimita el panel */
+    color: white;
+}
+
+/* Ocultar barra de scroll interna de Angular Material y ordenar el layout */
+.cart-drawer ::ng-deep .mat-drawer-inner-container {
+    overflow: hidden !important;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.drawer-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.drawer-title h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffb74d;
+}
+
+.cart-items-list {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* Oculta la barra visual pero permite deslizar si hay muchos productos */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE y Edge */
+}
+
+.cart-items-list::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari y Opera */
+}
+
+.cart-item {
+    background-color: #2b2b3d;
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.cart-item-name {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.cart-item-category {
+    font-size: 12px;
+    color: #aeb2c5;
+}
+
+.cart-item-price {
+    font-size: 14px;
+    color: #4caf50;
+    font-weight: 600;
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.item-quantity {
+    font-size: 14px;
+    font-weight: bold;
+    min-width: 24px;
+    text-align: center;
+}
+
+.cart-empty {
+    text-align: center;
+    padding: 50px 0;
+    color: #aeb2c5;
+}
+
+.empty-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+    opacity: 0.5;
+}
+
+.drawer-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+    margin-top: auto;
+}
+
+.drawer-footer-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.total-price {
+    color: #4caf50;
+}
+
+.clear-btn {
+    width: 100%;
+}
+
+.checkout-btn {
+    width: 100%;
+    background-color: #2e7d32 !important;
+    /* Verde tienda / checkout */
+    color: white !important;
+    font-weight: 600 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.checkout-btn:hover {
+    background-color: #1b5e20 !important;
+}
+
+/* ESTADOS DE CARGA, ERROR Y VACÍO */
+.state-card {
+    background-color: #2b2b3d;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: white;
+}
+
+.state-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+}
+
+.spin-icon {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    animation: spin 1.2s linear infinite;
+    color: #1976d2;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.error-card p {
+    color: #ff5252;
+    font-size: 16px;
+    margin: 0;
+}
+
+.no-data-cell {
+    text-align: center !important;
+    padding: 30px !important;
+    color: #aeb2c5 !important;
+    font-style: italic;
 }

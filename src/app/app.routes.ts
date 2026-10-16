@@ -20,5 +20,7 @@ export const routes: Routes = [
         path: 'products/edit/:id',
         canActivate: [authGuard],
         loadComponent: () => import('./pages/product-form/product-form.component').then(m => m.ProductFormComponent)
-    }
+    },
+    // RUTA COMODÍN (Wildcard): Captura cualquier URL inexistente y redirige
+    { path: '**', redirectTo: 'products' }
 ];
