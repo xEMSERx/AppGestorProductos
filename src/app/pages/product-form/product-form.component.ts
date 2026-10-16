@@ -21,6 +21,7 @@ export class ProductFormComponent implements OnInit {
   productForm!: FormGroup;
   isEdit = false; // Bandera para saber si estamos creando o editando
   productId: string | null = null;
+  isSaving = false; // Bandera para evitar doble clic o acciones repetidas mientras guarda
 
   private fb = inject(FormBuilder); // Inyecciones (Angular 17+)
   private productService = inject(ProductService);
@@ -48,19 +49,26 @@ export class ProductFormComponent implements OnInit {
   }
 
   saveProduct(): void {
-    if (this.productForm.invalid) return;
+    if (this.productForm.invalid || this.isSaving) return;
 
-    const productData: Product = this.productForm.value; // Extraemos los valores de las cajas de texto
+    this.isSaving = true; // Bloquea nuevos clics
+    const productData: Product = this.productForm.value;
 
     if (this.isEdit && this.productId) {
-      this.productService.updateProduct(this.productId, productData).subscribe({ // ACTUALIZAR (Update)
+      this.productService.updateProduct(this.productId, productData).subscribe({
         next: () => this.router.navigate(['/products']),
-        error: (err) => console.error('Error al actualizar', err)
+        error: (err) => {
+          this.isSaving = false;
+          console.error('Error al actualizar', err);
+        }
       });
     } else {
-      this.productService.addProduct(productData).subscribe({ // CREAR (Create)
+      this.productService.addProduct(productData).subscribe({
         next: () => this.router.navigate(['/products']),
-        error: (err) => console.error('Error al crear', err)
+        error: (err) => {
+          this.isSaving = false;
+          console.error('Error al crear', err);
+        }
       });
     }
   }
