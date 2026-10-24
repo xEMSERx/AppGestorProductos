@@ -1,6 +1,6 @@
 # Aplicación de Gestor de Productos 🚀
 
-Aplicación web desarrollada en **Angular 17** (Standalone Components) para la gestión completa de un inventario de productos.
+Aplicación web desarrollada en **Angular 19** (Standalone Components) para la gestión completa de un inventario de productos.
 
 ## ✨ Características Principales
 
@@ -10,15 +10,20 @@ Aplicación web desarrollada en **Angular 17** (Standalone Components) para la g
 *   **Integración de API Externa (DolarAPI):** Consumo de API pública para obtener la cotización actual del dólar y calcular el precio convertido en tiempo real desde el frontend.
 *   **Custom Pipe Avanzado:** Implementación de un `CustomCurrencyPipe` parametrizable que da formato a los precios en Pesos (`ARS`) y Dólares (`USD`) utilizando `Intl.NumberFormat`.
 *   **CRUD Completo:** Sistema para listar, crear, editar y eliminar productos conectado a una API simulada (MockAPI).
-*   **Seguridad y Autenticación:** Sistema de Login protegido mediante Guards Funcionales (`CanActivateFn`) y persistencia de sesión segura en `localStorage`.
+*   **Seguridad y Autenticación:** Sistema de Login protegido mediante Guards Funcionales (`CanActivateFn`) y persistencia de sesión segura en `sessionStorage`.
+*   **Roles de Usuario (RBAC):** Sistema de roles (Administrador / Cliente) que adapta la interfaz y las rutas disponibles según el perfil del usuario logueado.
+*   **Carrito de Compras:** Panel lateral reactivo con gestión de cantidades, cálculo de total y simulación de checkout, disponible para el rol Cliente.
+*   **Estados de Carga y Error:** Indicadores visuales de carga (spinner), estado vacío, y manejo de errores con opción de reintento.
+*   **Validación de Formularios:** Mensajes de error contextuales en los formularios con prevención de envío duplicado.
 
 ## 🛠️ Tecnologías Utilizadas
 
-*   **Framework:** Angular 17+
+*   **Framework:** Angular 19
 *   **UI / Estilos:** Angular Material (MDC) + Vanilla CSS
 *   **Peticiones HTTP:** HttpClient (RxJS)
 *   **Formularios:** Reactive Forms (`FormBuilder`, `Validators`)
 *   **Backend / Base de Datos:** MockAPI (REST API)
+*   **Despliegue / Hosting:** Vercel
 
 ## ⚙️ Instalación y Ejecución Local
 

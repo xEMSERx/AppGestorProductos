@@ -3,6 +3,13 @@
 
   <span class="spacer"></span> <!-- Este espaciador empuja el botón hacia la derecha -->
 
+  <!-- Mostrar info de usuario logueado -->
+  <mat-icon *ngIf="authService.isAuthenticated()">person</mat-icon>
+  <span *ngIf="authService.isAuthenticated()" class="user-info">
+    {{ authService.getCurrentUser() }}
+    ({{ authService.isAdmin() ? 'Administrador' : 'Cliente' }})
+  </span>
+
   <!-- Botón de Cerrar Sesión -->
   <button mat-icon-button *ngIf="authService.isAuthenticated()" (click)="logout()" title="Cerrar Sesión">
     <mat-icon>logout</mat-icon>

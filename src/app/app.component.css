@@ -7,3 +7,10 @@ mat-toolbar {
     color: white !important;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
 }
+
+.user-info {
+    margin-left: 6px;
+    margin-right: 8px;
+    font-size: 14px;
+    opacity: 0.85;
+}
